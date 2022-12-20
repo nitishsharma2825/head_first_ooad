@@ -6,6 +6,12 @@ import java.util.TimerTask;
 public class DogDoor {
     private boolean open;
 
+    public Bark[] getAllowedBarks() {
+        return allowedBarks;
+    }
+
+    private Bark[] allowedBarks;
+
     public DogDoor() {
         this.open = false;
     }

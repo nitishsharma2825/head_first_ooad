@@ -7,7 +7,13 @@ public class BarkRecognizer {
         this.dogdoor = door;
     }
 
-    public void recognize(){
-        dogdoor.open();
+    public void recognize(Bark bark){
+        Bark[] allowedBarks = dogdoor.getAllowedBarks();
+        for(Bark b: allowedBarks){
+            if(b.equals(bark)){
+                dogdoor.open();
+                break;
+            }
+        }
     }
 }
