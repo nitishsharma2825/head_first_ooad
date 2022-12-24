@@ -1,5 +1,7 @@
 package DogDoor;
 
+import java.util.List;
+
 public class BarkRecognizer {
     private DogDoor dogdoor;
 
@@ -8,7 +10,7 @@ public class BarkRecognizer {
     }
 
     public void recognize(Bark bark){
-        Bark[] allowedBarks = dogdoor.getAllowedBarks();
+        List<Bark> allowedBarks = dogdoor.getAllowedBarks();
         for(Bark b: allowedBarks){
             if(b.equals(bark)){
                 dogdoor.open();
