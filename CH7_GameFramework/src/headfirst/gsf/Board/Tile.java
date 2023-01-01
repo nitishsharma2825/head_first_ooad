@@ -12,6 +12,7 @@ public class Tile {
         this.units = new ArrayList<>();
     }
 
+    // can only be accessed inside the headfirst.gsf.Board package
     protected void addUnit(Unit unit){
         this.units.add(unit);
     }
