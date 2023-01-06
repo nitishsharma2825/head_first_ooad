@@ -20,6 +20,14 @@ public class Unit {
         return id;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public void addWeapon(Weapon weapon){
         if (weapons == null)
             weapons.add(weapon);
@@ -37,7 +45,11 @@ public class Unit {
 
     public Object getProperty(String Property) {
         if (properties == null){
-            return null;
+            throw new RuntimeException("No properties for this Unit");
+        }
+        Object value = properties.get(property);
+        if (value == null){
+            throw new RuntimeException("Request for non-existent property");
         }
         return properties.get(property);
     }
